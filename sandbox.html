@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <meta name="author" content="Wan Afnan Hariz">
+    <meta name="license" content="MIT">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>afnan-dev</title>
+    <link rel="stylesheet" href="sandbox.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Press+Start+2P&family=Rubik+Vinyl&display=swap" rel="stylesheet">
+
+    
+  </head>
+  <body>
+    <main>
+      <!--KIV: hide this hide btn for a this moment -->
+      <div class="w__full flex flex__col__max--700 md:flex-row justify-center space-x-1 space-y-1 items-center font-semibold relative z-10" style="color: snow;">
+        <p class="text-xs mb-2 md:mb-0 cursor-pointer" style="letter-spacing: 1px;" id="theme__id" >Theme : <span id="theme-name-id" style="text-decoration: underline;text-underline-offset: 4px;">Blood Upon The Snow</span></p>
+        <div class="hidden__max--700 cursor-pointer" id="music__id"><div id="music-wave" style="width:50px"></div></div>
+        <button class="text-white border py-1 px-2 card__glass md:my-2 rounded-md text-xs" id="playPauseBtn">Play/Pause</button>
+        <button class="text-white border py-1 px-2 card__glass md:my-2 rounded-md text-xs" id="muteBtn">Mute/Unmute</button>        
+      </div>
+      <button
+        type="button"
+        class="shadow__lg z-20 card__glass px-3 py-2 space-x-1 fixed right-3 top-2 flex hidden"
+        style="letter-spacing: 1.2px"
+        id="back"
+      >
+        <p
+          class="text-white font-bold text-sm italic"
+          style="pointer-events: none"
+        >
+          <span class="text-blood relative" style="top: 0.3px">H</span>ide
+        </p>
+        <img
+          src="./assets/back-icon.svg"
+          class=""
+          alt="back-icon"
+          style="width: 25px; height: 25px; pointer-events: none"
+        />
+      </button>
+      <!-- THE CUBE fixed z-0 fixed__center -->
+      <main id="main__wrapper__cube" class="w-full">
+        <section
+          id="section__wrapper__cube"
+          class="absolute left-1/2 user-text pointer-events-none"
+        >
+          <div class="mx-auto text-center relative tracking-widest">
+            <h1 class="relative pt-3 text-base md:text-2xl text-white pb-2">
+              <div class="py-2 text-xs font-medium text-white hidden__min--700">
+                Click the baby
+                <span class="text-blood font-bold">dragon</span>
+                to open/close
+                <span class="font-medium text-blood"> menu</span>
+              </div>
+              <div class="relative hidden__max--700">
+                Drag + Rotate
+                <span class="text-blood font-bold">the Dice</span> to
+                <span class="font-medium"> navigate</span>
+              </div>
+            </h1>
+            <h3 class="w__full text-base text-center text-white">
+              <span class="font-medium">Click</span>
+              <span class="text-blood font-bold">the Dice</span>
+
+              <span class="font-medium">to open</span>
+            </h3>
+            <h5 class="py-2 text-xs font-medium text-white hidden__max--700">
+              Click the baby
+              <span class="text-blood font-bold text-sm"> dragon</span>
+              to open/close <span class="text-blood font-bold">Menu</span>
+            </h5>
+
+            <!-- if in mobile mode change to 'click the red spot to navigate' -->
+          </div>
+        </section>
+        <section
+          class="container__3d"
+          style="margin: 22rem 0"
+          id="section-cube-1"
+        >
+          <div class="cube" id="cube-1">
+            <div data-section-id="blood__1" id="face__1" class="face front">
+              Profile
+            </div>
+            <div data-section-id="blood__2" id="face__2" class="face back">
+              Music
+            </div>
+            <div data-section-id="blood__3" id="face__3" class="face top">
+              Contact
+            </div>
+            <div data-section-id="blood__4" id="face__4" class="face bottom">
+              Portfolio
+            </div>
+            <div data-section-id="blood__5" id="face__5" class="face left">
+              Github
+            </div>
+            <div data-section-id="blood__6" id="face__6" class="face right">
+              Theme
+            </div>
+          </div>
+        </section>
+      </main>
+      <!-- fixed -->
+      <!-- <section class="border w-11/12 z-10 fixed left-1/2 p-0 " style="pointer-events:auto;height: 650px;transform: translate(-50%,10%);">  bottom:15rem;right:15rem;transition: all 0.6s; -->
+      <div
+        class="fixed w-10 h-10 z-10 cursor-pointer"
+        id="circle"
+        style="opacity: 0.9; transform: translateX(160px) translateY(220px)"
+      >
+
+        <!-- onclick="stopPropagation(event)" -->
+        <div id="circle__menubox">
+          <div id="circle__container" onclick="">
+            <ul id="circle__ul__menu">
+              <li
+                data-section-id="blood__1"
+                data-face-id="face__1"
+                id="circle__profile"
+              >
+                <p>Profile</p>
+              </li>
+              <li
+                data-section-id="blood__2"
+                data-face-id="face__2"
+                id="circle__music"
+              >
+                <p>Music</p>
+              </li>
+              <li
+                data-section-id="blood__3"
+                data-face-id="face__3"
+                id="circle__contact"
+              >
+                <p>Contact</p>
+              </li>
+              <li
+                data-section-id="blood__4"
+                data-face-id="face__4"
+                id="circle__portfolio"
+              >
+                <p>Portfolio</p>
+              </li>
+              <li
+                data-section-id="blood__5"
+                data-face-id="face__5"
+                id="circle__github"
+              >
+                <p>Github</p>
+              </li>
+              <li
+                data-section-id="blood__6"
+                data-face-id="face__6"
+                id="circle__theme"
+              >
+                <p>Theme</p>
+              </li>
+              <li data-section-id="" data-face-id="" id="circle__rolldice">
+                <p>Roll Dice (exit)</p>
+              </li>
+            </ul>
+          </div>
+          <!-- width="200" height="200" -->
+        </div>
+
+        <div
+          class="absolute fixed__center"
+          style="width: 200px;user-select: none; pointer-events: none"
+        >
+          <img
+            src="./assets/dragonite-fly.gif"
+            class="relative"
+            style="transform: translateX(-0.1rem) translateY(-0.4rem)"
+            alt="pokemon"
+            id="circle__img"
+          />
+          
+        </div>
+        <p class="absolute font-medium w-20" style="color:#ffd500;font-size:10px;bottom:-13px;left:0;user-select: none; pointer-events: none" >
+          click me!
+        </p>
+      </div>
+      <!-- </section> -->
+
+      <!--* Section Blood__1 PROFILE-->
+      <section
+        class="section__blood p-5 relative"
+        style="opacity: 0"
+        id="blood__1"
+      >
+        <!-- FIRST ROW -->
+        <div class="parent-abc">
+          <section class="card__glass w-full">
+            <div class="p-5 flex flex-col justify-center items-center">
+              <h1
+                style="letter-spacing: 0.2rem"
+                class="my-5 text-2xl text-white text-extrabold italic"
+              >
+                Profile
+                <!-- A<span class="font-extrabold text-blood">fn</span>an -->
+              </h1>
+
+              <!-- src="assets/afnan.jpg" -->
+              <!-- src="https://thumbs.gfycat.com/OptimalLeanAssassinbug-max-1mb.gif" -->
+              <!-- src="./assets/sf.gif" -->
+              <img
+                class="mb-1 mt-5x"
+                src="./assets/zeus.gif"
+                alt="no_gif"
+                id="img__1"
+              />
+              <!--border border-white style="border-radius: 0rem 5rem 0rem 5rem" -->
+              <div class="mb-3 px-5 py-1">
+                <!-- avatar -->
+                <h1
+                  style="letter-spacing: 0.3rem"
+                  class="m-0 text-xl font-extrabold text-white special-font-a"
+                >
+                  A<span class="underline" style="text-underline-offset: 3px"
+                    >fn</span
+                  >an
+                </h1>
+              </div>
+            </div>
+          </section>
+          <section class="card__glass w-full py-8 overflow-hidden">
+            <!--* SKILLS *-->
+            <h1
+              class="text-white text-justify mb-4"
+              style="letter-spacing: 0.1rem; margin-left: 5%"
+            >
+              <span class="font-bold">S</span>kills
+            </h1>
+            <div class="relative flex justify-center space-x-2">
+              <img
+                src="./assets/icon-js.svg"
+                alt="icon-js"
+                width="25"
+                height="25"
+                style="transform: translateY(0px)"
+                class="m-0 p-0 hidden__max--700"
+              />
+              <section class="progress-container relative">
+                <!--  style="transition-delay: 10s;" -->
+                <div
+                  class="progress-bar progress-bar--75 flex item-center relative z-5"
+                ></div>
+                <p
+                  class="w-fit font-bold ml-2 text-white absolute left-0 z-10"
+                  style="font-size: 10px; top: 3px"
+                >
+                  Javascript (Js)
+                  <span style="letter-spacing: 1px" class="hidden__min--700"
+                    ><span class="text-blood font-extrabold">3</span>/4</span
+                  >
+                </p>
+              </section>
+              <p class="text-white relative -top-1 hidden__max--700">
+                <span class="text-lg text-green-600 font-bold">3</span>
+                <span class="text-xs">/</span>
+                <span class="text-sm">4</span>
+              </p>
+            </div>
+            <div class="relative flex justify-center space-x-2 space-y-4">
+              <img
+                src="./assets/css3.svg"
+                alt="icon-js"
+                width="25"
+                height="25"
+                style="transform: translateY(4px)"
+                class="m-0 p-0 hidden__max--700"
+              />
+              <section class="progress-container relative">
+                <div
+                  class="progress-bar progress-bar--75 flex item-center relative z-5"
+                ></div>
+                <p
+                  class="w-fit font-bold ml-2 text-white absolute left-0 z-10"
+                  style="font-size: 10px; top: 3px"
+                >
+                  CSS
+                  <span style="letter-spacing: 1px" class="hidden__min--700"
+                    ><span class="text-blood font-extrabold">3</span>/4</span
+                  >
+                </p>
+              </section>
+              <p class="text-white relative -top-1 hidden__max--700">
+                <span class="text-lg text-green-600 font-bold">3</span>
+                <span class="text-xs">/</span>
+                <span class="text-sm">4</span>
+              </p>
+            </div>
+            <div class="relative flex justify-center space-x-2 space-y-4">
+              <img
+                src="./assets/mysql-horizontal.svg"
+                alt="icon-js"
+                width="25"
+                height="25"
+                style="transform: translateY(7px) translateX(-10px) scale(2)"
+                class="m-0 p-0 hidden__max--700"
+              />
+              <section class="progress-container relative">
+                <div
+                  class="progress-bar progress-bar--75 flex item-center relative z-5"
+                ></div>
+                <p
+                  class="w-fit font-bold ml-2 text-white absolute left-0 z-10"
+                  style="font-size: 10px; top: 3px"
+                >
+                  Mysql
+                  <span style="letter-spacing: 1px" class="hidden__min--700"
+                    ><span class="text-blood font-extrabold">3</span>/4</span
+                  >
+                </p>
+              </section>
+              <p class="text-white relative -top-1 hidden__max--700">
+                <span class="text-lg text-green-600 font-bold">3</span>
+                <span class="text-xs">/</span>
+                <span class="text-sm">4</span>
+              </p>
+            </div>
+            <div class="relative flex justify-center space-x-2 space-y-4">
+              <img
+                src="./assets/php.svg"
+                alt="icon-js"
+                width="25"
+                height="25"
+                style="transform: translateY(4px)"
+                class="m-0 p-0 hidden__max--700"
+              />
+              <section class="progress-container relative">
+                <div
+                  class="progress-bar progress-bar--75 flex item-center relative z-5"
+                ></div>
+                <p
+                  class="w-fit font-bold ml-2 text-white absolute left-0 z-10"
+                  style="font-size: 10px; top: 3px"
+                >
+                  PHP
+                  <span style="letter-spacing: 1px" class="hidden__min--700"
+                    ><span class="text-blood font-extrabold">3</span>/4</span
+                  >
+                </p>
+              </section>
+              <p class="text-white relative -top-1 hidden__max--700">
+                <span class="text-lg text-green-600 font-bold">3</span>
+                <span class="text-xs">/</span>
+                <span class="text-sm">4</span>
+              </p>
+            </div>
+
+            <div class="relative flex justify-center space-x-2 space-y-4">
+              <img
+                src="./assets/icons8-wordpress.svg"
+                alt="icon-js"
+                width="25"
+                height="25"
+                style="transform: translateY(4px)"
+                class="m-0 p-0 hidden__max--700"
+              />
+              <section class="progress-container relative">
+                <div
+                  class="progress-bar progress-bar--50 flex item-center relative z-5"
+                ></div>
+                <p
+                  class="w-fit font-bold ml-2 text-white absolute left-0 z-10"
+                  style="font-size: 10px; top: 3px"
+                >
+                  Wordpress
+                  <span style="letter-spacing: 1px" class="hidden__min--700"
+                    ><span class="text-blood font-extrabold">2</span>/4</span
+                  >
+                </p>
+              </section>
+              <p class="text-white relative -top-1 hidden__max--700">
+                <span class="text-lg text-orange font-bold">2</span>
+                <span class="text-xs">/</span>
+                <span class="text-sm">4</span>
+              </p>
+            </div>
+            <div class="relative flex justify-center space-x-2 space-y-4">
+              <img
+                src="./assets/flutter-svgrepo-com.svg"
+                alt="icon-js"
+                width="25"
+                height="20"
+                style="transform: translateY(9px)"
+                class="m-0 p-0 hidden__max--700"
+              />
+              <section class="progress-container relative">
+                <div
+                  class="progress-bar progress-bar--50 flex item-center relative z-5"
+                ></div>
+                <p
+                  class="w-fit font-bold ml-2 text-white absolute left-0 z-10"
+                  style="font-size: 10px; top: 3px"
+                >
+                  Flutter
+                  <span style="letter-spacing: 1px" class="hidden__min--700"
+                    ><span class="text-blood font-extrabold">2</span>/4</span
+                  >
+                </p>
+              </section>
+              <p class="text-white relative -top-1 hidden__max--700">
+                <span class="text-lg text-orange font-bold">2</span>
+                <span class="text-xs">/</span>
+                <span class="text-sm">4</span>
+              </p>
+            </div>
+            <div class="relative flex justify-center space-x-2 space-y-4">
+              <img
+                src="./assets/dev.svg"
+                alt="icon-js"
+                width="23"
+                height="15"
+                style="transform: translateY(5px)"
+                class="m-0 p-0 hidden__max--700"
+              />
+              <section class="progress-container relative">
+                <div
+                  class="progress-bar progress-bar--25 flex item-center relative z-5"
+                ></div>
+                <p
+                  class="w-fit font-bold ml-2 text-white absolute left-0 z-10"
+                  style="font-size: 10px; top: 3px"
+                >
+                  Devops
+                  <span style="letter-spacing: 1px" class="hidden__min--700"
+                    ><span class="text-white font-extrabold">1</span>/4</span
+                  >
+                </p>
+              </section>
+              <p class="text-white relative -top-1 hidden__max--700">
+                <span class="text-lg text-blood font-bold">1</span>
+                <span class="text-xs">/</span>
+                <span class="text-sm">4</span>
+              </p>
+            </div>
+          </section>
+        </div>
+        <!-- SECOND ROW -->
+        <div class="py-5">
+          <section class="card__glass space-y-1 w-full">
+            <!--  -->
+            <p
+              class="text-white w-fit pt-8 pb-9 text__intro whitespace-pre-wrap"
+              style="width: 88%; margin-left: 5%; margin-right: 5%">
+ Hi, My fullname is<span class="text-2xl italic"> Wan Afnan Hariz </span>. A Software (Full-Stack) Developer with a passion for creating innovative and efficient solutions to complex problems. I provide comprehensive website and mobile application development services to help businesses and individuals bring their ideas to life. With a focus on user experience and cutting-edge technology, I build custom solutions that are not only visually appealing but also highly functional and scalable. 💻 
+
+ I'm here to help 😊 , please<span class="text-xl italic cursor-pointer" id="contact__me"> Contact me </span>to learn more about how I can help to bring your project into reality. If you'd like to get in touch, please click Contact me or <span class="underline italic cursor-pointer" id="click__here"> click here </span>
+              <!-- , you can reach me  -->
+            </p>
+            <!-- <p class="text-white px-10 pb-10 text-base whitespace-pre-wrap">
+            </p> -->
+          </section>
+        </div>
+      </section>
+
+      <!--* Section Blood__2 Music -->
+      <section class="section__blood py-5 px-2  relative" style="opacity: 0" id="blood__2">
+        <div class="card__glass py-5 px-2 w-full">
+
+          <h1 class="text-xl md:text-2xl mb-8 mt-4 text-white text-center" style="letter-spacing: 0.2rem"> M<span class="underline" style="text-underline-offset: 4px;">us</span>ic</h1>
+          <section class="border-2 bg-gray-900 base-glow pb-12 rounded-lg flex flex-col items-center justify-center overflow-scroll w-11/12 md:w-3/4 mx-auto" id="container__ytplayer">
+          <h2 class="mx-auto text-center p-3 text-xl w__fit text-white my-5">
+            <span class="text-blood font-bold">Blood</span>
+            <span class="font-normal">Upon The </span>
+            <span class="font-bold">Snow</span>
+          </h2>
+          <!-- <dotlottie-player autoplay loop mode="normal" style="width: 320px"> </dotlottie-player> -->
+          <div id="ytplayer" class="border-0 rounded-lg w-full md:w-3/4" style="height:290px"></div>          
+          <div id="music-wave-2" style="width:30px;margin:10px"></div>
+          <p class="text__intro text-white text-left flex justify-center items-center" style="margin: auto 3% auto 7%;width: 91%;">
+            "Blood Upon the Snow" is a song that has a profound impact on me and helps me focus while working. The haunting melody and powerful beat of this song create an intense atmosphere that keeps me focused and motivated. When I listen to this song while working, I find that I am able to block out distractions and concentrate on the task at hand.
+          </p>
+          <h3 class="pt-5 pb-2 text__intro text-white text-left flex justify-center items-center" style="margin: auto 3% auto 7%;width: 91%;">
+            Avalaible in spotify! 
+          </h3>
+
+
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/7LmeRZOi905AochW9J9FAA?utm_source=generator" width="88%" height="200px" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </section>
+          <div style="height: 36px;"></div>
+        </div>
+      </section>
+      <!--* Section Blood__3 CONTACT -->
+      <section
+        class="section__blood py-5 px-2 relative"
+        style="opacity: 0"
+        id="blood__3"
+      >
+        <div class="card__glass py-5 px-2 w-full">
+          <h1 class="text-xl md:text-2xl my-5 text-white text-center"> C<span class="underline" style="text-underline-offset: 4px;letter-spacing: 0.2rem">ontac</span>t </h1>
+          <div class="text-white text-center text-sm md:text-lg">
+            <p>
+              Keep In Touch! Lets me help you leverage your ideas into a
+              thriving success! <span class="text-xl">🥂</span>
+            </p>
+
+            <p class="text-white text-center text-base text-green-500 font-bold">
+              Let's work together and make your vision a reality! 😎
+            </p>
+            <p class="text-white text-center text-base font-bold">
+              Click/explore any items  below to reach me :-
+            </p>
+
+          </div>
+          <ul class="flex flex-col py-5 gap-y-3 justify-center items-center text-xs md:text-lg">
+       
+            <li class="flex text-white gap-x-2 italic items-center">
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/wan-afnan-hariz-wan-zahran-a03022146/"
+              >
+                <img
+                  class="w-6 h-6"
+                  src="./assets/linkedin-icon.svg"
+                  alt="telegram"
+              /></a>
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/wan-afnan-hariz-wan-zahran-a03022146/"
+              >
+                LinkedIn
+              </a>
+            </li>
+            <li class="flex items-center text-white gap-x-2 italic">
+              <a target="_blank" href="https://t.me/w_afnn">
+                <img class="w-6 h-6" src="./assets/telegram.svg" alt="telegram"
+              /></a>
+              <a target="_blank" href="https://t.me/w_afnn"> Telegram </a>
+            </li>
+            <li class="flex text-white gap-x-2 italic items-center">
+              <a target="_blank" href="https://wa.link/64dkwd">
+                <img
+                  class="w-6 h-6"
+                  src="./assets/whatsapp.svg"
+                  alt="whatsapps"
+              /></a>
+              <a target="_blank" href="https://wa.link/64dkwd"> Whatsapps </a>
+            </li>
+            <li class="flex text-white gap-x-2 italic items-center">
+              <img class="w-6 h-6" src="./assets/gmail.svg" alt="email" />
+              <p>wanafnanharizwz@gmail.com</p>
+            </li>
+          </ul>
+          <div>
+            <!-- src="https://media.tenor.com/iHXx1jpq51UAAAAC/cheers-leonardo-di-caprio.gif" -->
+            <img src="https://thumbs.gfycat.com/BronzeMasculineIsabellinewheatear-max-1mb.gif" alt="cheers" class="text-center mx-auto rounded-lg my-5" style="height: 200px;width: 250px;" >
+          </div>
+        </div>
+      </section>
+      <!--* Section Blood__4 Portfolio -->
+      <section class="section__blood py-5 px-2 relative" style="opacity: 0" id="blood__4">
+        <div class="card__glass py-5 px-2 w-full">
+          <h1 class="text-xl md:text-2xl my-5 text-white text-center"> P<span class="underline" style="text-underline-offset: 4px;letter-spacing: 0.2rem">ortfol</span>io </h1>
+         <div class="lottie-container mx-auto w__fit flex flex-col items-center">
+          <div id="wolf-moon" class="overflow-hidden pb-3" style="width: 70%;"></div>
+          <h5 class="special-font-c text-center py-2 text-sm md:text-2xl w-full" style="margin-left: 5%;letter-spacing: 1px;"> <span style="color: #123A6A;">..Still </span><span class="text-white">How</span>li<span class="text-white">ng</span><span style="color: #123A6A;">..</span> </h5>
+          <h6 class="special-font-c text-center py-2 text-sm md:text-lg w-full" style="margin-left: 5%;"> <span style="color: #123A6A;">U</span><span class="text-white underline" style="text-underline-offset: 4px;">nd</span>er Con<span class="text-white underline" style="text-underline-offset: 2px;">sturct</span><span style="color: #123A6A;">ion</span> </h6>
+        </div>
+          <div style="height: 120px;"></div>
+        </div>
+      </section>
+      <!--* Section Blood__5 Github -->
+      <section class="section__blood py-5 px-2 relative" style="opacity: 0" id="blood__5">
+        <div class="pt-10 pb-14 card__glass w-full text__intro">
+          <h1 class="text-xl md:text-2xl mb-8 text-white text-center" style="letter-spacing: 0.2rem">Gi<span class="underline" style="text-underline-offset: 4px;">thu</span>b</h1>
+          <div id="github__container-id" class="relative mx-auto flex flex-col justify-center items-center border-2 rounded-lg overflow-hidden">
+              <a href="https://github.com/devilbats011" target="_blank" style="flex-grow: 1;">
+                <img src="./assets/github-afnan.png" alt="afnn" class="w-full" style="flex-grow: 1;"> 
+              </a>
+              <a href="https://github.com/devilbats011" target="_blank" class="flex gap-2 p-3 bg-[#0E1117] justify-center text-white w-full border-t-2 border-white" style="background: #0E1117;">
+              <img src="./assets/github.svg" alt="github">
+                <span style="transform: translateY(.1rem);">Afnan's Github</span>
+            </a>
+          </div>
+          <!-- <div style="height: 0"></div> -->
+        </div>
+
+      </section>
+      <!--* Section Blood__6 Theme -->
+      <section class="section__blood py-5 px-2 relative" style="opacity: 0" id="blood__6">
+        <div class="pt-10 pb-12 card__glass w-full text__intro">
+       
+          <h1 class="text-xl md:text-2xl mb-8 text-white text-center"> T<span class="underline" style="text-underline-offset: 4px;letter-spacing: 0.2rem">hem</span>e</h1>
+          <div id="theme__container-id" class="flex flex-col gap-y-5 items-center justify-center text__intro overflow-scroll" >
+            <section class="radio__group flex text-white gap-x-2 items-center border-2 border-blue-800 py-2 px-4 rounded-lg bg-blue-400">
+              <input type="radio" id="radio__theme-1" name="radio__options" value="Blood Upon The Snow"   >
+              <label for="blood-snow" style="flex-grow:1"> <span class="text-blood font-bold">Blood</span> Upon The Snow </label>
+              <img src="./assets/bloodUponSnow.png" style="width:140px;height:80px;" class="border-2 border-blue-800 rounded hidden__max--700" >
+            </section>
+            <section class="radio__group flex text-white gap-x-2 items-center border-2 border-gray-700 py-2 px-4 rounded-lg bg-gray-400">
+              <input type="radio" id="radio__theme-2" name="radio__options" value="Midnight Snow" >
+              <label for="midnight-snow" style="flex-grow: 1;"> <span class="text-gray-800 font-bold" >Midnight</span> Snow </label>
+              <img src="./assets/midnight.png" style="width:140px;height:80px;" class="border-2 border-gray-600 rounded hidden__max--700" >
+            </section>
+          </div>
+ 
+          <div style="height: 120px;"></div>
+
+        </div>
+      </section>
+    </main>
+    <main class="z-30 fixed top-0 left-0 flex justify-center items-center" style="width: 100%;height: 100%;background: radial-gradient(#355085,#293954,#181e2b);opacity: 1;transition: opacity 1s ease-in-out; " id="main__loading-id">
+        <section class="flex flex-col space-y-3 justify-center items-center" style="width: 300px;">
+           <div id="loading__wolf-id" class="rounded-full bg-gray-600 base-glow" style="background: #3d557e; width:190px"></div>
+            <section class="progress-container relative w-full overflow-hidden"
+            style="border-radius: 8rem;border: 1px solid #68808D;" >
+            <div
+              class="progress-bar flex item-center relative z-5"
+              id="loading__progress-bar-id"
+              style="border-radius: 8rem;background: linear-gradient(to left,#e4b66c,#e48d02);width: 0%;transition: width 1500ms ease-in-out;"
+              >
+            </div>
+            <!-- #FEDDA7 -->
+            <p
+              class="mx-auto font-bold text-white special-font-c absolute left-0 pl-3"
+              style="font-size: 10px; top: 4px;letter-spacing: 1px;"
+              id="progress__loading__text-id"
+            >
+              Loading ..
+             
+            </p>
+            </section>
+        </section>
+    </main>
+  </body>
+</html>
+
+<script src="sandboxMain.js" type="module"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.3/lottie.min.js"></script>
+<script>
+
+  //* Lottie
+  function  initLottie (lottiePathFile = null,id = null,
+  option = {
+    loop: true,
+    autoplay: true
+  }) {
+     fetch(lottiePathFile)
+    .then(response => response.json())
+    .then(data => {
+      const animationData = data;
+      const animationContainer = document.getElementById(id);
+      const animation = bodymovin.loadAnimation({
+        container: animationContainer,
+        renderer: "svg",
+        loop: option.loop,
+        autoplay: option.autoplay,
+        animationData: animationData
+      });
+    });
+  }
+
+  initLottie('assets/lottie-loading-lonely-wolf.json','loading__wolf-id');
+  initLottie('./assets/lottie-wolf-and-moon.json','wolf-moon');
+  initLottie('./assets/music-wave.json','music-wave-2',{autoplay: false,loop:false});
+
+  // Initialize the animation
+  const musicWave = document.getElementById('music-wave');
+  const musicWaveAnimation = bodymovin.loadAnimation({
+    container: musicWave,
+    renderer: 'svg',
+    loop: true,
+    autoplay: false,
+    path: './assets/music-wave.json'
+  });
+
+  // Play the animation on button click
+  var playButton = document.getElementById('playPauseBtn');
+  playButton.addEventListener('click', function() {
+    console.log(musicWaveAnimation.isPaused,'pplay')
+    musicWaveAnimation.isPaused ? musicWaveAnimation.play() : musicWaveAnimation.pause()
+  });
+
+
+  // YouTube
+  //? https://developers.google.com/youtube/iframe_api_reference#Loading_a_Video_Player
+  //? https://developers.google.com/youtube/player_parameters
+  //? https://www.youtube.com/watch?v=QPjHCAHfjoU
+  //* load youtube player
+  var tag = document.createElement("script");
+  tag.src = "https://www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName("script")[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player("ytplayer", {
+      height: "390",
+      width: "640",
+      videoId: "Irq6uFneSCI",
+      playerVars: {
+        playsinline: 1,
+        autoplay: 1,
+        start: 47,
+        controls: 1,
+      },
+      events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
+      }
+    });
+
+    // const ytSect = document.getElementById('container__ytplayer');
+    // ytSect.classList.add('hidden');
+  }
+
+  function onPlayerReady(event) {
+    document.getElementById("playPauseBtn").addEventListener("click", function() {
+      // console.log('%csandbox.html line:634 ', 'color: #007acc;', );
+      playPauseVideo();
+    });
+    document.getElementById("muteBtn").addEventListener("click", function() {
+      // console.log('%csandbox.html line:638 ', 'color: #007acc;', );
+      muteUnmuteVideo();
+    });
+  }
+
+  function onPlayerStateChange(event) {
+    const playButton = document.getElementById('playPauseBtn');
+
+    console.log('%csandbox.html  Yt ', 'color: orange;', event.data );
+    if (event.data == YT.PlayerState.PLAYING) {
+      // console.log('Player is playing.');
+      musicWaveAnimation.play();
+    } 
+    else if ([-1,0,2,3,5].includes(event.data)) {
+      // console.log('%csandbox.html line:658 hello 0235', 'color: #007acc;');
+      musicWaveAnimation.pause();
+    }
+    // YT.PlayerState.UNSTARTED (-1)
+    // YT.PlayerState.ENDED (0)
+    // YT.PlayerState.PLAYING (1)
+    // YT.PlayerState.PAUSED (2)
+    // YT.PlayerState.BUFFERING (3)
+    // YT.PlayerState.CUED (5)
+
+  }
+
+  function playPauseVideo() {
+    if (player.getPlayerState() == YT.PlayerState.PLAYING) {
+      player.pauseVideo();
+    } else {
+      player.playVideo();
+    }
+  }
+
+  function muteUnmuteVideo() {
+    if (player.isMuted()) {
+      player.unMute();
+    } else {
+      player.mute();
+    }
+  }
+
+</script>
+<script src="./sandboxSnowLoad.js"></script>
