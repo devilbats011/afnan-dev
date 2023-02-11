@@ -32,21 +32,25 @@ window.onload = function () {
     textLoading.innerText = "loading " + text;
   }, 1500);
 
-  let setIntervalSnowId;
-  function snowFalls() {
-    document.head.appendChild(
-      (function () {
-        var s = document.createElement("script");
-        s.type = "text/javascript";
-        s.async = true;
-        s.src =
-          "https://cdn.jsdelivr.net/npm/christmas-snow-3d/build/snow3d.js";
-        return s;
-      })()
-    );
-  }
-  setIntervalSnowId = setInterval(() => {
-    if (setIntervalSnowId) clearInterval(setIntervalSnowId);
-    snowFalls();
-  }, 2900);
+  /**
+    let setIntervalSnowId;
+   * 
+    function snowFalls() {
+      document.head.appendChild(
+        (function () {
+          var s = document.createElement("script");
+          s.type = "text/javascript";
+          s.async = true;
+          s.src =
+            "https://cdn.jsdelivr.net/npm/christmas-snow-3d/build/snow3d.js";
+          return s;
+        })()
+      );
+    }
+    setIntervalSnowId = setInterval(() => {
+      if (setIntervalSnowId) clearInterval(setIntervalSnowId);
+      snowFalls();
+    }, 2900);
+   */
+  
 };
