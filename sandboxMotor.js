@@ -231,14 +231,11 @@ export function setCube() {
     });
   }
 
-  setTimeout(() => {
-    // document.querySelector('body').style.background = `linear-gradient(to bottom, #20B2AA, #3CB371, #2E8B57,#228B22 )`; forest theme
-    // circle__music  circle__profile circle__contact circle__rolldice circle__theme circle__github
-    const profileLiEl = document.querySelector("#circle__profile");
-    // sectionCubeFacesToggleHandler(document.getElementById(profileLiEl.dataset.faceId));
-    // cubeRotateBasedOnSectId(profileLiEl.dataset.sectionId);
-    openFaceCube({sectionId: profileLiEl.dataset.sectionId, faceId:profileLiEl.dataset.faceId});
-  }, 5100);
+  // setTimeout(() => {
+    //* circle__music  circle__profile circle__contact circle__rolldice circle__theme circle__github
+    // const profileLiEl = document.querySelector("#circle__profile");
+    // openFaceCube({sectionId: profileLiEl.dataset.sectionId, faceId:profileLiEl.dataset.faceId});
+  // }, 5100);
 }
 
 // set contact me contact__me

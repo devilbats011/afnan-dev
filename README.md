@@ -3,11 +3,11 @@
 ## <span style="color:orange">Theme</span>
 <br>
 
-<span style="color:crimson"># Blood Upon The Snow </span>
-<img src="./assets/readme-1.png" style="margin:1rem;" width="330px">
-<br>
-<span style="color:gray"># Midgnight</span>
-<img src="./assets/readme-2.png" style="margin:1rem;" width="330px">
+#### Blood Upon The Snow
+<img src="./assets/readme-1.png" width="250px" style="margin-bottom: 1rem;">
+
+#### Midnight
+<img src="./assets/readme-2.png" width="250px">
 
 
 ## Package Use:
