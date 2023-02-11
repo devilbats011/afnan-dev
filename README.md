@@ -4,10 +4,10 @@
 <br>
 
 <span style="color:crimson"># Blood Upon The Snow </span>
-![Alt Text](./assets/readme-1.png)
-<br><br><br>
+<img src="./assets/readme-1.png" style="margin:1rem;" width="330px">
+<br>
 <span style="color:gray"># Midgnight</span>
-![Alt Text](./assets/readme-2.png)
+<img src="./assets/readme-2.png" style="margin:1rem;" width="330px">
 
 
 ## Package Use:
