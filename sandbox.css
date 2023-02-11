@@ -1,3 +1,8 @@
+* {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+}
 body {
   background: linear-gradient(to bottom, #73b9d9, #1b789c, #1b789c, #137878);
   min-height: 100vh;
@@ -319,6 +324,7 @@ input[type=radio] {
   /* box-shadow: 0px 0px 15px 5px rgba(239, 40, 40, 0.9); */
   /* background: radial-gradient(#A51120,#96262B); */
   /* border-radius: 10rem; */
+  
   bottom: 15rem;
   right: 15rem;
   transition: all 5s ease-in-out;
