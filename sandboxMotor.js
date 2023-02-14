@@ -337,14 +337,15 @@ export function circleMove() {
   function flyMove() {
     let moveX, moveY;
 
-    if (
-      screen.orientation.type.startsWith("landscape") &&
-      window.innerHeight < 610
-    ) {
+    if (screen.orientation.type.startsWith("landscape") && window.innerHeight < 610) {
       moveX = Math.floor(Math.random() * (170 - 100 + 1) + 100);
       moveY = 220;
-      // console.log("Screen is in landscape mode",window.innerHeight);
-    } else {
+    }
+    if(window.innerWidth < 700) {
+      moveX = Math.floor(Math.random() * (170 - 100 + 1) + 100);
+      moveY = 220; 
+    } 
+    else {
       moveX = Math.floor(Math.random() * (150 - 100 + 1) + 100);
       moveY = Math.floor(Math.random() * 180);
 
