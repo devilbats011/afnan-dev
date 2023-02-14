@@ -1,7 +1,6 @@
 # \# Afnan Dev 
 
 ## <span style="color:orange">Theme</span>
-<br>
 
 #### Blood Upon The Snow
 <img src="./assets/readme-1.png" width="250px" style="margin-bottom: 1rem;">
